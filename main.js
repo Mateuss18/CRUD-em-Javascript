@@ -64,6 +64,30 @@ const saveClient = () => {
   }
 }
 
+const createRow = (client) => {
+   const newRow = document.createElement('tr')
+   newRow.innerHTML = `
+      <td>${client.nome}</td>
+      <td>${client.cpf}</td>
+      <td>${client.email}</td>
+      <td>${client.telefone}</td>
+      <td>${client.endereco}</td>
+      <td>
+         <button type="button" class="button green">editar</button>
+         <button type="button" class="button red">excluir</button>
+      </td>
+   `
+   document.querySelector('#tableClient>tbody').appendChild(newRow)
+}
+
+
+const updateTable = () => { 
+      const dbClient = readClient()
+      dbClient.forEach(createRow)
+}
+
+updateTable()
+
 //-----Eventos-----
 document.getElementById('cadastrarCliente').addEventListener('click', openModal)
 
