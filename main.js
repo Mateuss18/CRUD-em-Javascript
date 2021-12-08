@@ -15,13 +15,16 @@ const getLocalStorage = () => JSON.parse(localStorage.getItem('dbClient')) ?? []
 const setLocalStorage = (dbClient) => localStorage.setItem("dbClient", JSON.stringify(dbClient))
 //----CRUD----
 
-
 //CREATE
 const createClient = (client) => {
   const dbClient = getLocalStorage()
   dbClient.push (client)
   setLocalStorage(dbClient)
 }
+//READ
+const readClient = () => getLocalStorage()
+
+
 
 //-----Eventos-----
 document.getElementById('cadastrarCliente').addEventListener('click', openModal)
