@@ -29,7 +29,7 @@
                     <th>Ação</th>
                 </tr>
             </thead>
-            <tbody>
+            <!-- <tbody>
                 <tr>
                     <td>Maria</td>
                     <td>maria@gmail.com</td>
@@ -60,7 +60,7 @@
                         <button type="button" class="button red">excluir</button>
                     </td>
                 </tr>
-            </tbody>
+            </tbody> -->
         </table>
         <div class="modal" id="modal">
             <div class="modal-content">
@@ -68,24 +68,24 @@
                     <h2>Novo Cliente</h2>
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
-                <form class="modal-form">
-                    <select class="modal-field modal-select" id="tipo-cliente">
+                <form id="form" class="modal-form">
+                    <select class="modal-field modal-select" id="tipo-cliente" required>
                       <option value="">Tipo de cliente</option>
                       <option value="PessoaFisica">Pessoa Fisica</option>
                       <option value="PessoaJuridica">Pessoa Juridica</option>
                     </select>
-                    <input type="text" class="modal-field" placeholder="Nome">
-                    <input type="text" class="modal-field" placeholder="CPF">
-                    <input type="email" class="modal-field" placeholder="E-mail">
-                    <input type="text" class="modal-field" placeholder="Telefone">
-                    <select class="modal-field modal-select" id="tipo-telefone">
+                    <input id="nome" type="text" class="modal-field" placeholder="Nome" required>
+                    <input id="cpf" type="number" class="modal-field" placeholder="CPF" required>
+                    <input id="email" type="email" class="modal-field" placeholder="E-mail" required>
+                    <input id="telefone" type="text" class="modal-field" placeholder="Telefone" required>
+                    <select class="modal-field modal-select" id="tipo-telefone" required>
                       <option value="">Tipo de telefone</option>
                       <option value="celular">Celular</option>
                       <option value="residencial">Residencial</option>
                       <option value="comercial">Comercial</option>
                     </select>
-                    <input type="text" class="modal-field" placeholder="Endereço">
-                    <select class="modal-field modal-select" id="tipo-endereco">
+                    <input id="endereco" type="text" class="modal-field" placeholder="Endereço" required>
+                    <select class="modal-field modal-select" id="tipo-endereco" required>
                       <option value="">Tipo de endereço</option>
                       <option value="celular">Cobrança</option>
                       <option value="residencial">Comercial</option>
@@ -95,8 +95,8 @@
                     </select>
                 </form>
                 <footer class="modal-footer">
-                    <button class="button green">Salvar</button>
-                    <button class="button blue">Cancelar</button>
+                    <button id="salvar" class="button green">Salvar</button>
+                    <button id="cancelar" class="button blue">Cancelar</button>
                 </footer>
             </div>
         </div>

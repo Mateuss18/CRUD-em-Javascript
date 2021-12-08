@@ -1,19 +1,14 @@
 const openModal = () => document.getElementById('modal').classList.add('active')
 
-const closeModal = () =>
-  document.getElementById('modal').classList.remove('active')
-
-const tempClient = {
-  nome: 'Claudete',
-  email: 'mateusdfl18@gmail.com',
-  cpf: '4820768813',
-  telefone: '1996489694',
-  endereco: 'Avenida Dr Paulo, 231 SP'
+const closeModal = () => {
+   clearFields()
+   document.getElementById('modal').classList.remove('active')
 }
 
 const getLocalStorage = () => JSON.parse(localStorage.getItem('dbClient')) ?? []
 const setLocalStorage = dbClient =>
   localStorage.setItem('dbClient', JSON.stringify(dbClient))
+
 //----CRUD----
 
 //CREATE
@@ -35,12 +30,45 @@ const updateClient = (index, client) => {
 
 //DELETE
 const deleteClient = index => {
-  const dbClient = readClient()
-  dbClient.splice(index, 1)
-  setLocalStorage(dbClient)
+   const dbClient = readClient()
+   dbClient.splice(index, 1)
+   setLocalStorage(dbClient)
+}
+
+const isValidFields = () => {
+    return document.getElementById('form').reportValidity()
+}
+
+//Interação com o Layout
+
+const clearFields = () => {
+   const fields = document.querySelectorAll('.modal-field')
+   fields.forEach(field => field.value = "")
+}
+
+
+const saveClient = () => {
+  if(isValidFields()){
+      const client = {
+         tipoCliente: document.getElementById('tipo-cliente').value,
+         nome: document.getElementById('nome').value,
+         cpf: document.getElementById('cpf').value,
+         email: document.getElementById('email').value,
+         telefone: document.getElementById('telefone').value,
+         tipoTelefone: document.getElementById('tipo-telefone').value,
+         endereco: document.getElementById('endereco').value,
+         tipoEndereco: document.getElementById('tipo-endereco').value,
+      }
+      createClient(client) 
+      closeModal()
+  }
 }
 
 //-----Eventos-----
 document.getElementById('cadastrarCliente').addEventListener('click', openModal)
 
 document.getElementById('modalClose').addEventListener('click', closeModal)
+
+document.getElementById('salvar').addEventListener('click', saveClient)
+
+document.getElementById('cancelar').addEventListener('click', clearFields)
