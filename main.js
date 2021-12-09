@@ -44,6 +44,7 @@ const isValidFields = () => {
 const clearFields = () => {
    const fields = document.querySelectorAll('.modal-field')
    fields.forEach(field => field.value = "")
+   document.getElementById('nome').dataset.index = 'new'
 }
 
 
@@ -119,9 +120,13 @@ const editDelete = (event) => {
 
       if(action == 'edit'){
          editClient(index)
-         console.log("editando cliente")
       }else{
-         console.log("deletando cliente")
+         const client = readClient()[index]
+         const response = confirm (`Você tem certeza que deseja deletar o cliente ${client.nome}?`)
+         if(response){
+            deleteClient(index)
+            updateTable()
+         }
       }
    }
 }
