@@ -40,30 +40,11 @@
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form id="form" class="modal-form">
-                    <select class="modal-field modal-select" id="tipo-cliente" required>
-                      <option value="">Tipo de cliente</option>
-                      <option value="PessoaFisica">Pessoa Fisica</option>
-                      <option value="PessoaJuridica">Pessoa Juridica</option>
-                    </select>
-                    <input id="nome" type="text" class="modal-field" placeholder="Nome" required>
+                    <input id="nome" data-index="new" type="text" class="modal-field" placeholder="Nome" required>
                     <input id="cpf" type="number" class="modal-field" placeholder="CPF" required>
                     <input id="email" type="email" class="modal-field" placeholder="E-mail" required>
                     <input id="telefone" type="text" class="modal-field" placeholder="Telefone" required>
-                    <select class="modal-field modal-select" id="tipo-telefone" required>
-                      <option value="">Tipo de telefone</option>
-                      <option value="celular">Celular</option>
-                      <option value="residencial">Residencial</option>
-                      <option value="comercial">Comercial</option>
-                    </select>
                     <input id="endereco" type="text" class="modal-field" placeholder="Endereço" required>
-                    <select class="modal-field modal-select" id="tipo-endereco" required>
-                      <option value="">Tipo de endereço</option>
-                      <option value="celular">Cobrança</option>
-                      <option value="residencial">Comercial</option>
-                      <option value="comercial">Correspondência</option>
-                      <option value="comercial">Entrega</option>
-                      <option value="comercial">Residencial</option>
-                    </select>
                 </form>
                 <footer class="modal-footer">
                     <button id="salvar" class="button green">Salvar</button>
