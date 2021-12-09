@@ -50,18 +50,22 @@ const clearFields = () => {
 const saveClient = () => {
   if(isValidFields()){
       const client = {
-         tipoCliente: document.getElementById('tipo-cliente').value,
          nome: document.getElementById('nome').value,
          cpf: document.getElementById('cpf').value,
          email: document.getElementById('email').value,
          telefone: document.getElementById('telefone').value,
-         tipoTelefone: document.getElementById('tipo-telefone').value,
          endereco: document.getElementById('endereco').value,
-         tipoEndereco: document.getElementById('tipo-endereco').value,
       }
-      createClient(client) 
-      updateTable()
-      closeModal()
+      const index = document.getElementById('nome').dataset.index
+      if(index == 'new'){
+         createClient(client) 
+         updateTable()
+         closeModal()
+      } else{
+         updateClient(index, client)
+         updateTable()
+         closeModal()
+      }
   }
 }
 
@@ -92,8 +96,20 @@ const updateTable = () => {
       dbClient.forEach(createRow)
 }
 
+const fillFields = (client) => {
+   document.getElementById('nome').value = client.nome
+   document.getElementById('cpf').value = client.cpf
+   document.getElementById('email').value = client.email
+   document.getElementById('telefone').value = client.telefone
+   document.getElementById('endereco').value = client.endereco
+   document.getElementById('nome').dataset.index = client.index
+}
+
 const editClient = (index) => {
-   const client = readClient()
+   const client = readClient()[index]
+   client.index = index
+   fillFields(client)
+   openModal()
 }
 
 const editDelete = (event) => {
