@@ -46,9 +46,10 @@ main {
 
 footer {
   width: 100;
+  color: #ff7b00;
   text-align: center;
-  font-weight: 200;
   font-style: italic;
+  font-size: 23px;
   padding: 20px;
 }
 
