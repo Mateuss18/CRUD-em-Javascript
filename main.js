@@ -47,6 +47,7 @@ const clearFields = () => {
   document.getElementById('nome').dataset.index = 'new'
 }
 
+// Botão salvar cliente 
 const saveClient = () => {
   if (isValidFields()) {
     const client = {
@@ -69,6 +70,7 @@ const saveClient = () => {
   }
 }
 
+// Criando as colunas dos clientes adicionados 
 const createRow = (client, index) => {
   const newRow = document.createElement('tr')
   newRow.innerHTML = `
@@ -105,6 +107,8 @@ const fillFields = client => {
   document.getElementById('nome').dataset.index = client.index
 }
 
+
+// Botão editar cliente
 const editClient = index => {
   const client = readClient()[index]
   client.index = index
@@ -112,6 +116,7 @@ const editClient = index => {
   openModal()
 }
 
+// Botão deletar cliente
 const editDelete = event => {
   if (event.target.type == 'button') {
     const [action, index] = event.target.id.split('-')
@@ -162,7 +167,7 @@ const initialColors = {
 const darkMode = {
    bgColor: '#131313',
    textColor: '#FFFFFF',
-   secundaryColor: '#ffa34d'
+   secundaryColor: '#a04d00'
 }
 
 const transformKey = key => 
