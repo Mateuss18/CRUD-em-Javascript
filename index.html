@@ -21,7 +21,14 @@
         <h1 class="header-title">Cadastro de Clientes</h1>
     </header>
     <main>
-        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button>
+        <div class="mainHeader">                                   
+            <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button>
+            <div class="toggle">
+                <input id="switch" type="checkbox" name="theme">
+                <label for="switch">Toggle</label>
+            </div>
+
+        </div>
         <table id="tableClient" class="records">
             <thead>
                 <tr>
@@ -44,7 +51,7 @@
                 </header>
                 <form id="form" class="modal-form">
                     <input id="nome" data-index="new" type="text" class="modal-field" placeholder="Nome" required>
-                    <input id="cpf" type="number" class="modal-field" placeholder="CPF" required>
+                    <input id="cpf" type="text" class="modal-field" placeholder="CPF" required>
                     <input id="email" type="email" class="modal-field" placeholder="E-mail" required>
                     <input id="telefone" type="text" class="modal-field" placeholder="Telefone" required>
                     <input id="endereco" type="text" class="modal-field" placeholder="Endereço" required>
