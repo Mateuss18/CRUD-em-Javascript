@@ -24,6 +24,7 @@
 
 .records tr:hover {
   background-color: var(--secundary-color);
+  color: var(--text-color);
 }
 
 @media (max-width: 480px) {

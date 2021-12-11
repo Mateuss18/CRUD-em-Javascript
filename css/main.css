@@ -8,7 +8,7 @@
   --primary-color: #ff7b00;
   --secundary-color: #fff1cc;
   --shadow-color: #ccc;
-  --text-color: #fff;
+  --text-color: #000000;
   --bg-color: #FFFFFF;
 }
 
@@ -59,6 +59,10 @@ footer {
   font-style: italic;
   font-size: 23px;
   padding: 20px;
+}
+
+table{
+  color: var(--text-color)
 }
 
 @media (max-width: 480px) {

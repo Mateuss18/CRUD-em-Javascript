@@ -148,25 +148,32 @@ document
 
 // DARK MODE
 const html = document.querySelector('html')
-const button = document.querySelector('button[name=theme]')
+const checkbox = document.querySelector('input[name=theme]')
 
 const getStyle = (element, style) =>
   window.getComputedStyle(element).getPropertyValue(style)
 
 const initialColors = {
-  bg: getStyle(html, '--bg-color'),
-  colorText: getStyle(html, '--text-color'),
-  secunColor: getStyle(html, ' --secundary-color')
+  bgColor: getStyle(html, '--bg-color'),
+  textColor: getStyle(html, '--text-color'),
+  secundaryColor: getStyle(html, ' --secundary-color')
 }
 
 const darkMode = {
-  bg: '#131313',
-  colorText: '#fff',
-  secunColor: '#FFFFFF'
+   bgColor: '#131313',
+   textColor: '#FFFFFF',
+   secundaryColor: '#ffa34d'
 }
 
-const changeColors = colors => {}
+const transformKey = key => 
+      "--" + key.replace(/([A-Z])/, "-$1").toLowerCase()
 
-checkbox.addEventListener('change', ({ target }) => {
-  target.checked ? changeColors() : changeColors()
+const changeColors = colors => {
+   Object.keys(colors).map(key => 
+      html.style.setProperty(transformKey(key), colors[key])
+   )
+}
+
+checkbox.addEventListener("change", ({ target }) => {
+  target.checked ? changeColors(darkMode) : changeColors(initialColors)
 })
