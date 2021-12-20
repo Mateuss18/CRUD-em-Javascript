@@ -165,7 +165,7 @@ const initialColors = {
 }
 
 const darkMode = {
-   bgColor: '#131313',
+   bgColor: '#222222',
    textColor: '#FFFFFF',
    secundaryColor: '#a04d00'
 }
