@@ -3,16 +3,17 @@
 </h1>
 
 <h4 align="center">
-  Pagina de CRUD para fazer cadastro de clientes desenvolvido para treinas as habilidas em HTML, CSS e principalmente JavaScript.
+  Aplicação web de CRUD para fazer cadastro de clientes desenvolvido para treinar validação em <i>HTML</i>, display flex e media query no <i>CSS</i> e principalmente os conceitos de LocalStorage no <i>JavaScript</i>.
 </h4>
 
 <p align="center">
-  <a href="#rodar-pagina-do-crud">Demonstração</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-rodar-pagina-do-crud">Demonstração</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-licença">Licença</a>
 </p>
 
-### [Rodar pagina do CRUD](https://mateuss18.github.io/CRUD-em-Javascript/)
+### [🔛 Rodar pagina do CRUD](https://mateuss18.github.io/CRUD-em-Javascript/)
 <img src="/images/CRUD.png">
 <img src="/images/create.png">
 <img src="/images/Dark-mode.png">
@@ -31,6 +32,13 @@
 
 >
 ---
+## 💡 Features
+
+- Dark mode
+- Responsivo
+
+---
+
 ## 📝 Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
